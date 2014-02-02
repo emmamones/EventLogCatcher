@@ -1,0 +1,78 @@
+﻿Archivo de especificaciones sobre configuración de EventLog
+=========================================================================================================
+
+Agregar una llave en appsettings del archivo de configuración de la aplicación en donde será implementado
+llamada "LogDestino" la cual indicará el destino del log.
+
+Los posibles valores deben ser numericos y comprendidos dentro de este espectro
+
+0 : Escribir log en archivo de texto
+1 : Escribir log en eventViewer
+2 : Concentrar errores en una lista para acción de la aplicación
+3 : Escribir log en archivo xml
+4 : Escribit el log en xml y en una lista para accion de la aplicacion
+cualquier otro número : Apagar log
+----------------------------------------------------------------------------------------------------------
+
+Agregar una llave en appsettings del archivo de configuración de la aplicación en donde será implementado
+llamada "LogConfig" la cual indicará que información del log se tomará en cuenta.
+
+Los posibles valores deben ser numericos y comprendidos dentro de este espectro
+
+0 : Escribir toda la información generada
+1 : Escribir solo la alertas y errores
+cualquier otro número : Escribir solo errores
+----------------------------------------------------------------------------------------------------------
+
+Agregar una llave en appsettings del archivo de configuración de la aplicación en donde será implementado
+llamada "LogFileText" la cual indicará el destino físico del archivo .txt en donde escribe el log.
+
+Ejemplo
+"C:/Log/LogFileApp.txt"
+----------------------------------------------------------------------------------------------------------
+
+Agregar una llave en appsettings del archivo de configuración de la aplicación en donde será implementado
+llamada "LogFileXML" la cual indicará el destino físico del archivo .xml en donde escribe el log.
+
+Ejemplo
+"C:/Log/LogFileApp.xml"
+----------------------------------------------------------------------------------------------------------
+
+Agregar una llave en appsettings del archivo de configuración de la aplicación en donde será implementado
+llamada "LogSourceName" la cual indicará el nombre del recurso en el eventviewer
+
+Ejemplo
+"AppName"
+-------DateDormat----------------------------------------------------------------------
+Agregar una llave dateformat permite saber el formato en el que ingresaremos la fecha a la BD y el registro a el XML
+
+"MM/dd/yyyy HH:mm:ss"   para EUA
+"dd/MM/yyyy HH:mm:ss"   para Mexico
+--------Mantenimiento--------------------------------------------------------------
+Agregar un entero que indicara el limite de referencia que se tomara 
+para borrar los registros por antiguedad 
+
+<add key="Mantenimiento" value="30" />
+
+en este caso mantendra el la BD solo los registros que tienen como antiguedad menos de 30 dias en la BD respecto 
+a la fecha actual
+
+----------------------------Mapeo la entidad Event contra el usu del log en Bitacora interfases-----------
+----------------------------------------------------------------------------------------------------------
+Event       |||||||||||||||  Bitacora
+
+idBitacora --------------------idBitacora
+application--------------------NombreProceso
+idApplication------------------idProceso
+event--------------------------Evento
+method-------------------------Metodo
+Fecha--------------------------FechaEjecucion
+Status-------------------------Resultado
+customMessage------------------Subject
+SystemError--------------------Error Sistema
+SystemMessage------------------MensajeSistema
+fileName-----------------------Nombre archivo de Control
+opcional-----------------------Nombre del archivo de Datos.
+
+
+

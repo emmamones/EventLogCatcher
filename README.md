@@ -1,12 +1,8 @@
 EventLogCatcher
-===============
 
 Record events on multiple File Formats Understanding SOLID
 
-
-===================================EventLogCatcherManager
-======================
-
+===================================EventLogCatcherManager======================
 
 EventLogCatcher at the beginning was Some lines of Code throw them by an ex- college Fernando Flores few years ago,
 
@@ -22,7 +18,7 @@ It has so far Following Estructure
 
 folder estructure 
 
-/the CORE 
+/CORE 
 
    Logdirector : will be the only Class to be instantiate at the moment to call save the ”suceso” LOG, 
                      and according to the Implementation of any MediaAbstract class received over the constructor, 
@@ -69,7 +65,9 @@ folder estructure
      TemplateXMLEvent     : COncrete object implementation of TemplateXMLAbstract , This will create and fill the apropiate format for Events in a XML File.
 
 
-/Entities: Contains all DTO used in the Library
+/Entities: 
+
+   Contains all DTO used in the Library
 
 
 
